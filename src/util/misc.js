@@ -972,9 +972,9 @@
     // find miter points, p2 is the joint between p1 and p3
     // https://math.stackexchange.com/questions/1849784/calculate-miter-points-of-stroked-vectors-in-cartesian-plane
     findMiterPoints: function(p1, p2, p3, strokeWidth) {
-      var angle = Math.atan2(p1.x - p2.x, p2.y - p1.y);
-      var angle2 = Math.atan2(p2.x - p3.x, p3.y - p2.y);
-      var angleFinal = Math.PI + angle2 - angle;
+      // var angle = Math.atan2(p1.x - p2.x, p2.y - p1.y);
+      // var angle2 = Math.atan2(p2.x - p3.x, p3.y - p2.y);
+      // var angleFinal = Math.PI + angle2 - angle;
       // u = strokeWidth / 2 / sin(angleFinal)
       // uVector =  p1 - p2 / distance(p1, p2) * u
       // vVector =  p3 - p2 / distance(p3, p2) * u
