@@ -92,6 +92,7 @@
      * Calculate the polygon min and max point from points array,
      * returning an object with left, top, widht, height to measure the
      * polygon size
+     * new fabric.Polygon([{ x: -5, y: 0 },{ x: 5, y: 0 },{ x: 0, y: 200}], { strokeMiterLimit: 5000, objectCaching: false })
      * @return {Object} object.left X coordinate of the polygon leftmost point
      * @return {Object} object.top Y coordinate of the polygon topmost point
      * @return {Object} object.width distance between X coordinates of the polygon leftmost and rightmost point
