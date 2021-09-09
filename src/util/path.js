@@ -664,7 +664,7 @@
   /**
    *
    * @param {string} pathString
-   * @return {(string|number)[][]} An array of SVG path commands
+   * @return {number[][]} An array of SVG path commands
    * @example <caption>Usage</caption>
    * parsePath('M 3 4 Q 3 5 2 1 4 0 Q 9 12 2 1 4 0') === [
    *   ['M', 3, 4],
@@ -744,9 +744,11 @@
   /**
    *
    * Converts points to a smooth SVG path
-   * @param {{ x: number,y: number }[]} points Array of points
+   * @param {Object[]} points Array of points
+   * @param {number} points.x x coordinate of the point
+   * @param {number} points.y y coordinate of the point
    * @param {number} [correction] Apply a correction to the path (usually we use `width / 1000`). If value is undefined 0 is used as the correction value.
-   * @return {(string|number)[][]} An array of SVG path commands
+   * @return {string[][]} An array of SVG path commands
    */
   function getSmoothPathFromPoints(points, correction) {
     var path = [], i,

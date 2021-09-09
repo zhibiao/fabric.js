@@ -179,7 +179,7 @@
     /**
      * Converts points to SVG path
      * @param {Array} points Array of points
-     * @return {(string|number)[][]} SVG path commands
+     * @return {string[][]} SVG path commands
      */
     convertPointsToSVGPath: function (points) {
       var correction = this.width / 1000;
@@ -188,7 +188,7 @@
 
     /**
      * @private
-     * @param {(string|number)[][]} pathData SVG path commands
+     * @param {string[][]} pathData SVG path commands
      * @returns {boolean}
      */
     _isEmptySVGPath: function (pathData) {
@@ -198,7 +198,7 @@
 
     /**
      * Creates fabric.Path object to add on canvas
-     * @param {(string|number)[][]} pathData Path data
+     * @param {string[][]} pathData Path data
      * @return {fabric.Path} Path to add on canvas
      */
     createPath: function(pathData) {
