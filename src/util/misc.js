@@ -15,6 +15,53 @@
    */
   fabric.util = {
 
+    touchesFilter: function(){
+      var _addEventListener = EventTarget.prototype.addEventListener;
+      EventTarget.prototype.addEventListener = function (
+        event,
+        callback,
+        useCapture
+      ) {
+
+      function _callback(event) {
+          var _event = new CustomEvent(event.type);
+
+          for (var key in event) {
+            _event[key] = event[key];
+          }
+
+          if (
+            event.type == "touchstart" ||
+            event.type == "touchmove" ||
+            event.type == "touchend"
+          ) {
+
+            var _touches = [],
+              _changedTouches = [];
+
+            for(var n=0; n<event.touches.length; n++){
+              if (event.touches[n].target == event.target) {
+                _touches.push(event.touches[n]);
+              }
+            }
+
+            for(var m=0; m<event.changedTouches.length; m++){
+              if (event.changedTouches[m].target == event.target) {
+                _changedTouches.push(event.changedTouches[m]);
+              }
+            }
+
+            _event.touches = _touches;
+            _event.changedTouches = _changedTouches;
+          }
+
+          callback(_event);
+        }
+
+        _addEventListener.call(this, event, _callback, useCapture);
+      }
+    },
+
     /**
      * Calculate the cos of an angle, avoiding returning floats for known results
      * @static

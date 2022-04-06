@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FABRICJS-DMEOE</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        touch-action: none;
+        background-color: rgb(43, 46, 42);
+      }
+
+      #container1 {
+        background-color: cadetblue;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      #container2 {
+        background-color: blueviolet;
+        position: absolute;
+        position: absolute;
+        left: 610px;
+        top: 0;
+      }
+
+      #container3 {
+        background-color: chartreuse;
+        position: absolute;
+        left: 0;
+        top: 310px;
+      }
+
+      #container4 {
+        background-color: darkorange;
+        position: absolute;
+        left: 610px;
+        top: 310px;
+      }
+
+      .canvas-container {
+        border: 1px solid #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container1">
+      <canvas id="canvas1"></canvas>
+    </div>
+
+    <div id="container2">
+      <canvas id="canvas2"></canvas>
+    </div>
+
+    <div id="container3">
+      <canvas id="canvas3"></canvas>
+    </div>
+
+    <div id="container4">
+      <canvas id="canvas4"></canvas>
+    </div>
+
+    <script src="fabric.js"></script>
+    <script>
+      const canvas1 = new fabric.Canvas("canvas1", {
+        isDrawingMode: true,
+        width: 600,
+        height: 300,
+      });
+      canvas1.freeDrawingBrush = new fabric.PencilBrush(canvas1);
+      canvas1.freeDrawingBrush.color = "red";
+      canvas1.freeDrawingBrush.width = 4;
+
+      const canvas2 = new fabric.Canvas("canvas2", {
+        isDrawingMode: true,
+        width: 600,
+        height: 300,
+      });
+      canvas2.freeDrawingBrush = new fabric.PencilBrush(canvas2);
+      canvas2.freeDrawingBrush.color = "green";
+      canvas2.freeDrawingBrush.width = 4;
+
+      const canvas3 = new fabric.Canvas("canvas3", {
+        isDrawingMode: true,
+        width: 600,
+        height: 300,
+      });
+      canvas3.freeDrawingBrush = new fabric.PencilBrush(canvas3);
+      canvas3.freeDrawingBrush.color = "blue";
+      canvas3.freeDrawingBrush.width = 4;
+
+      const canvas4 = new fabric.Canvas("canvas4", {
+        isDrawingMode: true,
+        width: 600,
+        height: 300,
+      });
+      canvas4.freeDrawingBrush = new fabric.PencilBrush(canvas4);
+      canvas4.freeDrawingBrush.color = "white";
+      canvas4.freeDrawingBrush.width = 4;
+
+      fabric.Object.prototype.transparentCorners = false;
+    </script>
+  </body>
+</html>
