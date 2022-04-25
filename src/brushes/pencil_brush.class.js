@@ -58,6 +58,11 @@
      * @param {Object} pointer
      */
     onMouseDown: function(pointer, options) {
+     if(this.canvas.inverted){
+        pointer.setX(this.canvas.width - pointer.x);
+        pointer.setY(this.canvas.height - pointer.y);
+      }
+
       if (!this.canvas._isMainEvent(options.e)) {
         return;
       }
@@ -74,6 +79,11 @@
      * @param {Object} pointer
      */
     onMouseMove: function(pointer, options) {
+      if(this.canvas.inverted){
+        pointer.setX(this.canvas.width - pointer.x);
+        pointer.setY(this.canvas.height - pointer.y);
+      }
+
       if (!this.canvas._isMainEvent(options.e)) {
         return;
       }

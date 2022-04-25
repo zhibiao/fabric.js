@@ -17,6 +17,7 @@
         position: absolute;
         left: 0;
         top: 0;
+        transform: rotate(180deg);
       }
 
       #container2 {
@@ -25,6 +26,7 @@
         position: absolute;
         left: 610px;
         top: 0;
+        transform: rotate(180deg);
       }
 
       #container3 {
@@ -69,6 +71,7 @@
         isDrawingMode: true,
         width: 600,
         height: 300,
+        inverted: true,
       });
       canvas1.freeDrawingBrush = new fabric.PencilBrush(canvas1);
       canvas1.freeDrawingBrush.color = "red";
@@ -78,6 +81,7 @@
         isDrawingMode: true,
         width: 600,
         height: 300,
+        inverted: true,
       });
       canvas2.freeDrawingBrush = new fabric.PencilBrush(canvas2);
       canvas2.freeDrawingBrush.color = "green";
@@ -102,6 +106,9 @@
       canvas4.freeDrawingBrush.width = 4;
 
       fabric.Object.prototype.transparentCorners = false;
+
+
+      console.log(fabric.EraserBrush)
     </script>
   </body>
 </html>

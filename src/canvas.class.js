@@ -1,12 +1,8 @@
 (function() {
 
   var getPointer = fabric.util.getPointer,
-      touchesFilter = fabric.util.touchesFilter,
       degreesToRadians = fabric.util.degreesToRadians,
       isTouchEvent = fabric.util.isTouchEvent;
-
-    touchesFilter();
-
   /**
    * Canvas class
    * @class fabric.Canvas
