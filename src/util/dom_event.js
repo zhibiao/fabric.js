@@ -20,11 +20,7 @@
           _event[key] = event[key];
         }
 
-        if (
-          event.type == "touchstart" ||
-          event.type == "touchmove" ||
-          event.type == "touchend"
-        ) {
+        if (event.type == "touchstart" || event.type == "touchmove" /*|| event.type == "touchend"*/) {
           var _touches = [],
           _changedTouches = [];
 
